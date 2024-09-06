@@ -1,0 +1,92 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 2rem;
+}
+
+body:hover {
+    background-color: blueviolet;
+}
+
+h1 {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 15rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: blue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Div */
+.todo-app{
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: grey;
+    width: 400px; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.3s ease-in-out; 
+}
+
+.todo:hover {
+    border-radius: 1.45rem;
+    background-color: rgb(123, 123, 90);
+    transform: rotate(360deg);
+}
+
+/* Button */
+#add-btn {
+    border-radius: 1rem;
+    border: 1px solid black;
+    background-color: green;
+    height: 20px;
+    width: 40px;
+}
+
+#swap-btn {
+    border-radius: 1rem;
+    border: 1px solid black;
+    background-color: yellow;
+    height: 20px;
+    width: 45px;
+}
+
+#search-btn {
+    border-radius: 1rem;
+    border: 1px solid black;
+    background-color: blue;
+    height: 20px;
+    width: 60px;
+}
+
+#task-input {
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+#item1-input, #item2-input {
+    border: 2px solid black;
+    border-radius: 1rem;
+    transition: transform 0.6s ease-in-out;
+}
+
+#item1-input:hover, #item2-input:hover {
+    transform: scale(1.7);
+}
+
+#search-btn {
+    border: 2px solid black;
+    border-radius: 1rem;
+}
