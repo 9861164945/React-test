@@ -8,40 +8,46 @@ function App() {
     const [todos, setTodos] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
-    // Load todos from localStorage when the component mounts
+    // Load todos from localStorage 
+    // for Saving the todos After Refreshing u can use locastorage.setItem();
+     //localStorage.setItem('todos', JSON.stringify(todos));
+ 
     useEffect(() => {
         const storedTodos = JSON.parse(localStorage.getItem('todos')) || [];
         setTodos(storedTodos);
-        console.log("Loaded Todos:", storedTodos); // Debugging line
+        console.log("Loaded Todos:", storedTodos);
     }, []);
 
-    // Save todos to localStorage whenever the todos state changes
-    useEffect(() => {
-        console.log("Saving Todos:", todos); // Debugging line
-        localStorage.setItem('todos', JSON.stringify(todos));
-    }, [todos]);
-
+    
     const addTodo = (text) => {
         const newTodos = [...todos, { text, isDone: false }];
         setTodos(newTodos);
+        localStorage.setItem('todos', JSON.stringify(newTodos));
+ 
     };
 
     const deleteTodo = (index) => {
         const newTodos = [...todos];
         newTodos.splice(index, 1);
         setTodos(newTodos);
+        localStorage.setItem('todos', JSON.stringify(newTodos));
+ 
     };
 
     const editTodo = (index, newText) => {
         const newTodos = [...todos];
         newTodos[index].text = newText;
         setTodos(newTodos);
+        localStorage.setItem('todos', JSON.stringify(newTodos));
+ 
     };
 
     const toggleDone = (index) => {
         const newTodos = [...todos];
         newTodos[index].isDone = !newTodos[index].isDone;
         setTodos(newTodos);
+        localStorage.setItem('todos', JSON.stringify(newTodos));
+ 
     };
 
     const moveTodo = (index, direction) => {
@@ -52,10 +58,13 @@ function App() {
         const [movedTodo] = newTodos.splice(index, 1);
         newTodos.splice(index + direction, 0, movedTodo);
         setTodos(newTodos);
+        localStorage.setItem('todos', JSON.stringify(newTodos));
+ 
     };
 
     const filteredTodos = todos.filter(todo => 
         todo.text.toLowerCase().includes(searchQuery.toLowerCase())
+ 
     );
 
     return (
